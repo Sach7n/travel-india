@@ -4,16 +4,11 @@ import {PlaceContext} from '../Context';
 
 const Filter = () => {
 
-    const { place,setPlace } = useContext(PlaceContext);
-    const { handleChange,submitForm } = useContext(PlaceContext);
+    const { place } = useContext(PlaceContext);
+    const { handleChange,submitForm,clearFilter } = useContext(PlaceContext);
  
     const newPlace = [...new Map(place.map(np => [np.attraction, np])).values()]
     const newType = [...new Map(place.map(np => [np.type, np])).values()]
-
-
-
-  
-
 
     return (
         <>
@@ -58,15 +53,18 @@ const Filter = () => {
                     </div>            
 
         )}
-        </div>
+        </div>        
+        </form>
         <input className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded m-5 ml-32" 
                type="submit" 
                value="Submit"
                onClick={submitForm}
                 />
-        
-        
-        </form>
+        <input className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded m-5 ml-32" 
+               type="submit" 
+               value="Clear Filter"
+               onClick={clearFilter}
+                />
 </>
     );
 };

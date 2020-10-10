@@ -12,7 +12,7 @@ const PlacesList = () => {
         <Filter/>
         <div className="container mx-auto my-4">
 
-        <p className="text-3xl ml-20"> Places we can go </p>
+        <p className="text-3xl my-10 "> Places we can go </p>
 
             <div className="grid grid-cols-4 gap-5">
         {place.map((item,index)=><PlaceName key={index} place={item}/>)}
