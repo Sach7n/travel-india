@@ -1,5 +1,6 @@
 import React,{useContext, useState} from 'react';
 import {PlaceContext} from '../Context';
+import { places } from '../data';
 
 
 const Filter = () => {

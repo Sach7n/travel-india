@@ -33,7 +33,7 @@ const Context = props => {
     const submitForm =event=>{
       event.preventDefault();
       let tempPlace = [...place];
-      tempPlace = tempPlace.filter(place => place.attraction === formData.attraction || place.type === formData.type);
+      tempPlace = tempPlace.filter(place => place.attraction === formData.attraction && place.type === formData.type);
       setPlace(tempPlace)      
       console.log(tempPlace)
     }
