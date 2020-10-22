@@ -33,7 +33,10 @@ const Context = props => {
     const submitForm =event=>{
       event.preventDefault();
       let tempPlace = [...place];
-      tempPlace = tempPlace.filter(place => place.attraction === formData.attraction && place.type === formData.type);
+      if(formData.attraction)
+      {tempPlace = tempPlace.filter(place =>place.attraction === formData.attraction);}
+      if(formData.type)
+      {tempPlace = tempPlace.filter(place =>place.type === formData.type);}
       setPlace(tempPlace)      
       console.log(tempPlace)
     }
@@ -43,13 +46,15 @@ const Context = props => {
         attraction : "",
         type : ""
       })
+      document.getElementById("course-form").reset();
     }
     
     const providerValues = {
         place,
         clearFilter,
         handleChange,
-        submitForm
+        submitForm,
+        formData
       };
     
     return (

@@ -6,15 +6,15 @@ import { places } from '../data';
 const Filter = () => {
 
     const { place } = useContext(PlaceContext);
-    const { handleChange,submitForm,clearFilter } = useContext(PlaceContext);
+    const { handleChange,submitForm,clearFilter,formData } = useContext(PlaceContext);
  
-    const newPlace = [...new Map(place.map(np => [np.attraction, np])).values()]
-    const newType = [...new Map(place.map(np => [np.type, np])).values()]
+    const newPlace = [...new Map(places.map(np => [np.attraction, np])).values()]
+    const newType = [...new Map(places.map(np => [np.type, np])).values()]
 
     return (
         <>
         <p className="text-3xl m-10 ml-32"> Select where you would like to go.. </p>
-        <form className="flex m-10 ml-24" key="form" >
+        <form className="flex m-10 ml-24" key="form" id='course-form'>
         <div className="mx-10 text-gray-500 text-xs font-medium tracking-wide uppercase">
         <p className="mb-2">   Attraction </p>
         {
@@ -25,6 +25,7 @@ const Filter = () => {
                       type="radio"
                       name='attraction'
                       value={item.attraction}
+                      
                       defaultChecked={false}
                       onChange={handleChange}
                     />
