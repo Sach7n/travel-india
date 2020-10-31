@@ -99,6 +99,17 @@ export  const places = [
         best_time:"February",
         attraction:"nature",
         type:"eco"  
+      },
+      {
+        id: 10,
+        title: "Gujarat",
+        img: "img/uttarakhand.jpeg",
+        desc:
+          "lorem40",
+        near_airport:"Ahmedabad",
+        best_time:"March",
+        attraction:"architecture",
+        type:"adventure"  
       }
   ];
   export const detailPlace = [

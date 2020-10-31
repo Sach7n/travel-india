@@ -62,7 +62,7 @@ const Filter = () => {
                value="Submit"
                onClick={submitForm}
                 />
-        <input className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded m-5 ml-32" 
+        <input className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-2 rounded m-5 ml-6" 
                type="submit" 
                value="Clear Filter"
                onClick={clearFilter}

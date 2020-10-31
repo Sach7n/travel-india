@@ -37,6 +37,8 @@ const Context = props => {
       {tempPlace = tempPlace.filter(place =>place.attraction === formData.attraction);}
       if(formData.type)
       {tempPlace = tempPlace.filter(place =>place.type === formData.type);}
+      if(formData.attraction==="" && formData.type==="")
+      {console.log("no place found")}
       setPlace(tempPlace)      
       console.log(tempPlace)
     }
