@@ -12,7 +12,7 @@ const PlaceDetails = props => {
     const TABS = {
         'overview': <Overview details={Item}/>,
         'more_details': <MoreDetails/>,
-        'more_photos': <MorePhotos/>
+        'more_photos': <MorePhotos image={Item}/>
       }
       const [selectedTab, setSelectedTab] = useState('overview');
       let classTab=null;

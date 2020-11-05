@@ -7,6 +7,8 @@ export const { Consumer } = PlaceContext;
 const Context = props => {
    
     const [place,setPlace]=useState([]);
+    const [isOpen, setisOpen]=useState(false)
+    const [modalData, setmodalData]=useState()
 
     const [formData,setformData]= useState({
       attraction : "",
@@ -50,13 +52,28 @@ const Context = props => {
       })
       document.getElementById("course-form").reset();
     }
+
+    const openModal = items => {
+      setisOpen(true);
+      console.log(items);
+      setmodalData(items)
+      console.log(isOpen+"+"+items.id)
+    };
+    const closeModal = () => {
+      setisOpen(false);
+      console.log("colse modal")
+    };
     
     const providerValues = {
         place,
         clearFilter,
         handleChange,
         submitForm,
-        formData
+        formData,
+        openModal,
+        closeModal,
+        isOpen,setisOpen,
+        modalData
       };
     
     return (

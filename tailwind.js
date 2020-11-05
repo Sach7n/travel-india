@@ -292,11 +292,13 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
+      '3/5': '60%',
       screen: '100vh',
     }),
     inset: {
       '0': '0',
       auto: 'auto',
+      half: '50%',
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -335,6 +337,7 @@ module.exports = {
     maxHeight: {
       full: '100%',
       screen: '100vh',
+      '3/4': '75%',
     },
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',

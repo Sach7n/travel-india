@@ -47,7 +47,7 @@ export  const places = [
       },
       {
         id: 5,
-        title: "Leh and Laddakh",
+        title: "Leh Laddakh",
         img: "img/laddakh.jpg",
         desc:
           "The first inhabitants of Ladakh are thought to have been a mixture of nomadic herdsmen from the Tibetan plateau and a small contingent of early Buddhist refugees from northern India called the Mons, joined in the fourth or fifth century by the Indo-Aryan Dards, who introduced irrigation and settled agriculture. The first independent kingdom in the region was established in the ninth century by the maverick nobleman Nyima Gon, at around the same time as Buddhism was first disseminated by the wandering sage-apostles such as Padmasambhava (alias Guru Rinpoche). This was followed by the Second Spreading, among whose key proselytizers was the “Great Translator” Rinchen Zangpo.",
@@ -58,7 +58,7 @@ export  const places = [
       },
       {
         id: 6,
-        title: "North East",
+        title: "North East India",
         img: "img/north-east.jpg",
         desc:
           "The least explored, most mysterious and arguably the most beautiful region of India, the Northeast, known as the “Seven Sisters”, is connected to the rest of the country by a narrow stretch of land between Bhutan and Bangladesh, and was all but sealed off from the outside world until relatively recently. Arunachal Pradesh shares an extremely sensitive frontier with Chinese-occupied Tibet and, together with Nagaland, Manipur and Mizoram, a 1600km-long border with Myanmar.",
