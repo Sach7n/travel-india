@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/travel-ind/static/css/main.41b30b45.chunk.css",
+    "main.js": "/travel-ind/static/js/main.4890c2a2.chunk.js",
+    "main.js.map": "/travel-ind/static/js/main.4890c2a2.chunk.js.map",
+    "runtime-main.js": "/travel-ind/static/js/runtime-main.66b50f27.js",
+    "runtime-main.js.map": "/travel-ind/static/js/runtime-main.66b50f27.js.map",
+    "static/js/2.3ed85111.chunk.js": "/travel-ind/static/js/2.3ed85111.chunk.js",
+    "static/js/2.3ed85111.chunk.js.map": "/travel-ind/static/js/2.3ed85111.chunk.js.map",
+    "index.html": "/travel-ind/index.html",
+    "precache-manifest.8fdd955ffe5c9fd63d93ab65c0c4fed7.js": "/travel-ind/precache-manifest.8fdd955ffe5c9fd63d93ab65c0c4fed7.js",
+    "service-worker.js": "/travel-ind/service-worker.js",
+    "static/css/main.41b30b45.chunk.css.map": "/travel-ind/static/css/main.41b30b45.chunk.css.map",
+    "static/js/2.3ed85111.chunk.js.LICENSE.txt": "/travel-ind/static/js/2.3ed85111.chunk.js.LICENSE.txt",
+    "static/media/india.png": "/travel-ind/static/media/india.03c71b52.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66b50f27.js",
+    "static/js/2.3ed85111.chunk.js",
+    "static/css/main.41b30b45.chunk.css",
+    "static/js/main.4890c2a2.chunk.js"
+  ]
+}
