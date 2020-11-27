@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { places } from '../data';
-import PlaceDetails from './PlaceDetails'
 const PlaceName = place => {
 
     return (
@@ -10,7 +8,7 @@ const PlaceName = place => {
                           pathname: "/details",
                           myCustomProps: place
                       }} > 
-            <div className="max-w-sm rounded overflow-hidden shadow-md h-full hover:shadow-lg">
+            <div className="max-w-sm rounded overflow-hidden shadow-md w-72 h-84 lg:w-auto lg:h-full hover:shadow-lg">
                 <img src={place.place.img} alt="" className="w-full h-56 rounded"/>
                 <div className="px-6 py-4">
                     <div className="text-red-400  mb-2 text-xl">

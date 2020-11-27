@@ -1,5 +1,4 @@
 import React,{useEffect, useState,useContext} from 'react';
-import { Consumer } from '../../Context';
 import Modal from './Modal';
 import {PlaceContext} from '../../Context';
 
@@ -9,8 +8,7 @@ const MorePhotos = props => {
     let item =props.image.place;
     
     const [image,setImage]=useState("")
-    const [itemData, setitemData]=useState()
-    const { openModal,closeModal,isOpen } = useContext(PlaceContext);
+    const { openModal,isOpen } = useContext(PlaceContext);
 
 
 
@@ -27,10 +25,10 @@ const MorePhotos = props => {
     return (
 <>
 <div>
-<div className="grid grid-cols-4 gap-8 mx-16 my-5">
+<div className="mx-4 mt-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-4  lg:mx-16 lg:my-5">
             
     {image && image.map(items => (
-        <div key={items.id} className="h-full hover:shadow-lg" onClick={()=>openModal(items)} > 
+        <div key={items.id} className="h-full  hover:shadow-lg" onClick={()=>openModal(items)} > 
             
           <img  className=" w-full h-56 rounded" src={items.webformatURL} alt="" />
           </div>

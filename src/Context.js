@@ -16,13 +16,15 @@ const Context = props => {
     })    
     
     useEffect(()=>{
-      console.log('useeffect called')
       const fetchItems=()=>{
         setPlace(places)
       }
       fetchItems()
     },[formData])
 
+    let featuredPlaces = places.filter(place1 => place1.featured === true);
+    let randomRoom = featuredPlaces[~~(Math.random() * featuredPlaces.length)]
+    
     const handleChange = event => {
       const target = event.target;
         const value = target.value;
@@ -42,7 +44,6 @@ const Context = props => {
       if(formData.attraction==="" && formData.type==="")
       {console.log("no place found")}
       setPlace(tempPlace)      
-      console.log(tempPlace)
     }
     
     const clearFilter =()=>{
@@ -55,13 +56,10 @@ const Context = props => {
 
     const openModal = items => {
       setisOpen(true);
-      console.log(items);
       setmodalData(items)
-      console.log(isOpen+"+"+items.id)
     };
     const closeModal = () => {
       setisOpen(false);
-      console.log("colse modal")
     };
     
     const providerValues = {
@@ -73,7 +71,8 @@ const Context = props => {
         openModal,
         closeModal,
         isOpen,setisOpen,
-        modalData
+        modalData,
+        randomRoom
       };
     
     return (

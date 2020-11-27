@@ -9,8 +9,10 @@ export  const places = [
       near_airport:"Panjim Airport",
       best_time:"November",
       attraction:"beach",
-      type:"cruise"
-
+      type:"cruise",    
+      featured:false, 
+      Destination:"Anjuna beach,Baga beach,Candolim beach,Colva beach,Old Goa",
+      temprature: "17 - 32 c"
     },
     {
         id: 2,
@@ -21,7 +23,10 @@ export  const places = [
         near_airport:"Jaipur international airport",
         best_time:"February",
         attraction:"architecture",
-        type:"adventure" 
+        type:"adventure",    
+        featured:false,
+        Destination:"Jaipur,Jodhpur,Udaipur,Bikaner,Chittorgarh",
+        temprature: "10 - 35 c"  
       },
       {
         id: 3,
@@ -32,7 +37,10 @@ export  const places = [
         near_airport:"lorem3",
         best_time:"January",
         attraction:"mountains",
-        type:"adventure"  
+        type:"adventure",    
+        featured:false,
+        Destination:"Manali,Shimla,Mcleodganj,Dalhousie",
+        temprature: "4 - 20 c"   
       },
       {
         id: 4,
@@ -43,7 +51,10 @@ export  const places = [
         near_airport:"Kottayam, Pathanamthitta",
         best_time:"December",
         attraction:"nature",
-        type:"eco"    
+        type:"eco",    
+        featured:true,
+        Destination:"Munar,Cochin,Kumarakom,Allepev,Kovalam",
+        temprature: "23 -31 c"     
       },
       {
         id: 5,
@@ -54,7 +65,10 @@ export  const places = [
         near_airport:"Kushok Bakula Rimpochee Airpor",
         best_time:"May",
         attraction:"mountains",
-        type:"adventure"     
+        type:"adventure",    
+        featured:false,
+        Destination:"Lubra valley,Zanskar",
+        temprature: "4 - 20 c" 
       },
       {
         id: 6,
@@ -65,7 +79,10 @@ export  const places = [
         near_airport:"Lokpriya Gopinath Bordoloi International Airport",
         best_time:"February",
         attraction:"nature",
-        type:"eco"  
+        type:"eco",    
+        featured:false,
+        Destination:"Assam, Arunachal Pradesh, The hill triangle",
+        temprature: "4 - 20 c"   
       },
       {
         id: 7,
@@ -76,7 +93,10 @@ export  const places = [
         near_airport:"Jammu Air Port",
         best_time:"January",
         attraction:"nature",
-        type:"adventure"  
+        type:"adventure",    
+        featured:true,
+        Destination:"Gulmarg, Srinagar, Pahalgam,Sonmarg, Dal lake ",
+        temprature: "4 - 20 c"   
       },
       {
         id: 8,
@@ -87,29 +107,38 @@ export  const places = [
         near_airport:"Indira Gandhi international airport",
         best_time:"November",
         attraction:"architecture",
-        type:"adventure"  
+        type:"adventure",    
+        featured:false,
+        Destination:"Akshardham temple, Qutub minar, India gate, Red fort",
+        temprature: "8 - 25 c"   
       },
       {
         id: 9,
         title: "Uttarakhand",
-        img: "img/uttarakhand.jpeg",
+        img: "img/uttarakhand.jpg",
         desc:
           "Northeast of Delhi, bordering Nepal and Tibet, the mountains of the Garhwal and Kumaon regions rise from the fertile sub-Himalayan plains. Together they form the state of Uttarakhand, which (as Uttaranchal) was shorn free from lowland Uttar Pradesh in 2000 after years of agitation. The region has its own distinct languages and cultures, and successive deep river valleys shelter fascinating micro-civilizations, where Hinduism and Buddhism meet animism. The snow peaks here rank among the most beautiful mountains of the inner Himalayas, forming an almost continuous chain that culminates in Nanda Devi, the highest mountain in India at 7816m.",
         near_airport:"Jolly Grant airport",
         best_time:"February",
         attraction:"nature",
-        type:"eco"  
+        type:"eco",    
+        featured:true,
+        Destination:"Almora,Rishikesh,Dehradun,Nainital,Mussoorie",
+        temprature: "4 - 20 c"   
       },
       {
         id: 10,
         title: "Gujarat",
-        img: "img/uttarakhand.jpeg",
+        img: "img/gujarat.jpg",
         desc:
           "lorem40",
         near_airport:"Ahmedabad",
         best_time:"March",
         attraction:"architecture",
-        type:"adventure"  
+        type:"adventure",    
+        featured:false,
+        Destination:"Gir forest, Rann of Kutch, Statue of Unity",
+        temprature: "20 - 30 c"   
       }
   ];
   export const detailPlace = [

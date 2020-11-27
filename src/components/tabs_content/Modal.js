@@ -1,37 +1,28 @@
 import React,{useContext} from 'react';
-import { Consumer } from '../../Context';
 import {PlaceContext} from '../../Context';
 
-const MODAL_STYLES = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: '#FFF',
-    padding: '20px',
-    zIndex: 10
-  }
 
 const Modal = item => {
 
     const { openModal,closeModal,isOpen,modalData } = useContext(PlaceContext);
     if(isOpen)
-    {console.log("true")
-    console.log(modalData)
-    }
+    
     if(!openModal) {return null;}
     else
     {
     return (
-        <div className="modal-overlay fixed h-screen w-screen flex items-center top-0  justify-center ">
+        <div className="modal-overlay fixed h-screen w-screen flex items-center top-0  justify-center bg-gray-800 bg-opacity-75" onClick={closeModal}>
 
-        <div className=" h-3/5 max-h-3/4 w-auto bg-black rounded  cursor-pointer ">
-        <div className=" bg-gray-400 w-full flex justify-between p-3 shadow-xl text-gray-900">
+        <div className="rounded cursor-pointer border-4 rounded border-double border-red-800">
+        <div className=" bg-gray-400 w-full flex justify-between p-3 shadow-xl bg-red-300">
             <p>Photo by : {modalData.user}</p>
             <button onClick={closeModal}>close</button>
             </div>
-            <img src={modalData.webformatURL} alt="image too large"/>
-                <p className="text-gray-800 bg-gray-400 w-full p-1">Image URL : {modalData.pageURL}</p>
+            <div className="h-auto max-h-96 w-auto max-w-96">
+            <img src={modalData.webformatURL} alt="failed to load"/>
+            </div>
+                <p className="text-gray-800 bg-red-300 w-full p-1">Image URL : {modalData.pageURL}</p>
+        
         </div>
         </div>
 
