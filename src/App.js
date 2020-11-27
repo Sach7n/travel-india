@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import PlaceDetails from './components/PlaceDetails';
 
 function App() {
+  console.log("check netlify");
   return (
     <>
       
