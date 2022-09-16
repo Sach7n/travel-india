@@ -11,16 +11,16 @@ const useStorage = (file1) => {
   useEffect(() => {
     // references
     const item = file1.file
-    console.log(item.picture)
+    console.log(item.img)
     const metadata = {
       contentType: 'image/jpeg'
     };
-    const fireName = item.name + new Date().getTime();
+    const fireName = item.title + new Date().getTime();
     if (item != null) {
-      const fireName = item.name + new Date().getTime();
+      const fireName = item.title + new Date().getTime();
       const placesRef = collection(db, "travApp");
       const storageRef = ref(storage, 'travApp/' + fireName);
-      const uploadTask = uploadBytesResumable(storageRef, item.picture, metadata);
+      const uploadTask = uploadBytesResumable(storageRef, item.img, metadata);
       uploadTask.on('state_changed',
         (snapshot) => {
           const prog = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -41,9 +41,9 @@ const useStorage = (file1) => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setDoc(doc(placesRef, fireName), { postImage: downloadURL }, { merge: true })
+            setDoc(doc(placesRef, fireName), { img: downloadURL }, { merge: true })
           });
-          delete item.picture;
+          delete item.img;
           setDoc(doc(placesRef, fireName), item, { merge: true });
         })
     }

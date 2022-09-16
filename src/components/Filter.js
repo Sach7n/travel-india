@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useContext,useRef,useCallback,useState,useEffect} from 'react';
 import {PlaceContext} from '../Context';
 import { places } from '../data';
 
@@ -6,14 +6,37 @@ import { places } from '../data';
 const Filter = () => {
 
     const { handleChange,submitForm,clearFilter} = useContext(PlaceContext);
- 
+    const attractionInput = useRef()
+    const typeInput = useRef()
+    const [filt,setFilt] = useState(null)
+    //console.log(places)
+
     const newPlace = [...new Map(places.map(np => [np.attraction, np])).values()]
     const newType = [...new Map(places.map(np => [np.type, np])).values()]
+
+    useEffect(()=>{
+        
+    },[])
+
+    const formHandler1 = useCallback(
+      () => (event) => {
+          event.preventDefault();
+          const data = {
+              attraction: attractionInput.current.value,
+              type: typeInput.current.value,
+          };
+          setFilt(data)
+          console.log(data)
+          
+      },
+      [filt]
+  );
 
     return (
         <>
         <p className=" lg:text-3xl lg:m-10 lg:ml-32 text-2xl ml-6 m-6 "> Select where you would like to go.. </p>
-        <form className="flex lg:m-10 lg:ml-32 sm:ml-4 m-2  " key="form" id='course-form'>
+        <form className=" lg:m-10 lg:ml-32 sm:ml-4 m-2  " key="form" id='course-form'>
+        <div className="flex">
         <div className="mx-10 text-gray-500 text-xs font-medium tracking-wide uppercase sm:mx-2">
         <p className="mb-2">   Attraction </p>
         {
@@ -24,7 +47,7 @@ const Filter = () => {
                       type="radio"
                       name='attraction'
                       value={item.attraction}
-                      
+                      ref={attractionInput}
                       defaultChecked={false}
                       onChange={handleChange}
                     />
@@ -45,18 +68,19 @@ const Filter = () => {
                       type="radio"
                       name='type'
                       value={item.type}
+                      ref={typeInput}
                       defaultChecked={false}
                       onChange={handleChange}
                     />
-                    <span className="ml-2 capitalize">{item.type}</span>
-                    
+                    <span className="ml-2 capitalize">{item.type}</span>      
                     </label>
                     </div>            
 
         )}
         </div>        
-        </form>
-        <div className="flex lg:m-5 lg:ml-32 sm:ml-14 mx-12 m-4">
+        </div>
+
+        <div className="flex lg:m-6 lg:ml-2 sm:ml-8 m-2 ">
         <input className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-2 rounded" 
                type="submit" 
                value="Submit"
@@ -68,6 +92,8 @@ const Filter = () => {
                onClick={clearFilter}
                 />
         </div>
+        </form>
+        
 </>
     );
 };

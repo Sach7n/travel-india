@@ -1,12 +1,14 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import {places} from './data';
+import useFirestore from '../src/components/hooks/useFirestore';
 
 export const PlaceContext = React.createContext();
 export const { Consumer } = PlaceContext;
-
 const Context = props => {
-   
-    const [place,setPlace]=useState([]);
+    const { tempDoc } = useFirestore('travApp');
+    const [place,setPlace]=useState(tempDoc);
+    console.log(tempDoc)
+
     const [isOpen, setisOpen]=useState(false)
     const [modalData, setmodalData]=useState()
 
@@ -14,13 +16,15 @@ const Context = props => {
       attraction : "",
       type : ""
     })    
-    
+
+    const second = {place,formData}
     useEffect(()=>{
-      const fetchItems=()=>{
-        setPlace(places)
+      console.log("fired")
+      const fetchItems= async ()=>{
+        setPlace(tempDoc)
       }
       fetchItems()
-    },[formData])
+    },[formData,place])
 
     let featuredPlaces = places.filter(place1 => place1.featured === true);
     let randomRoom = featuredPlaces[~~(Math.random() * featuredPlaces.length)]

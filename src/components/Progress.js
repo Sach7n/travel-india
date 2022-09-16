@@ -1,11 +1,13 @@
 import React from 'react'
 import useStorage from './hooks/useStorage';
+import useFirestore from './hooks/useFirestore';
+
 
 const Progress = (file,setFile) => {
     const {progress} = useStorage(file)
-    //console.log(file.file)
+    
   return (
-    <div>{progress}</div>
+    <div></div>
   )
 }
 
