@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const PlacesList = () => {
 
-    const { place } = useContext(PlaceContext);
+    //const { place } = useContext(PlaceContext);
     const {tempDoc} = useFirestore('travApp')
     console.log(tempDoc)
     return (

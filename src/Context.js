@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import {places} from './data';
 import useFirestore from '../src/components/hooks/useFirestore';
 
@@ -17,14 +17,14 @@ const Context = props => {
       type : ""
     })    
 
-    const second = {place,formData}
+    var second = {tempDoc,formData,place}
     useEffect(()=>{
       console.log("fired")
       const fetchItems= async ()=>{
         setPlace(tempDoc)
       }
       fetchItems()
-    },[formData,place])
+    },[second])
 
     let featuredPlaces = places.filter(place1 => place1.featured === true);
     let randomRoom = featuredPlaces[~~(Math.random() * featuredPlaces.length)]
@@ -51,6 +51,7 @@ const Context = props => {
     }
     
     const clearFilter =()=>{
+      console.log("called")
       setformData({
         attraction : "",
         type : ""
