@@ -1,5 +1,4 @@
-import {  getDocs, collection } from "firebase/firestore";
-import { db} from "../firebase/config"
+import { db,getDocs, collection} from "../firebase/config"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -22,8 +21,7 @@ const useFirestore = (collection1) => {
             };
         fetchData()
     }, [collection1])
-    console.log(tempDoc)
-    return { tempDoc }
+      return { tempDoc }
 }
 
 export default useFirestore;

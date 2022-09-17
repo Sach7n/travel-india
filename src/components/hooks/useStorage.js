@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react';
-import { db, storage } from "../firebase/config"
-import { addDoc, collection } from "firebase/firestore";
-import { ref, uploadBytesResumable, uploadString, uploadBytes, getDownloadURL } from "firebase/storage";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, collection,ref, uploadBytesResumable,  getDownloadURL,db, storage } 
+from "../firebase/config"
 
 const useStorage = (file1) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState(null);
   useEffect(() => {
     // references
     const item = file1.file
-    console.log(item.img)
     const metadata = {
       contentType: 'image/jpeg'
     };
@@ -38,6 +34,7 @@ const useStorage = (file1) => {
         },
         (error) => {
           console.log(error)
+          setError(error)
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -49,6 +46,6 @@ const useStorage = (file1) => {
     }
   }, [file1]
   );
-  return { progress, url, error };
+  return { progress,  error };
 }
 export default useStorage;

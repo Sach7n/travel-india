@@ -7,8 +7,7 @@ export const { Consumer } = PlaceContext;
 const Context = props => {
     const { tempDoc } = useFirestore('travApp');
     const [place,setPlace]=useState(tempDoc);
-    console.log(tempDoc)
-
+    
     const [isOpen, setisOpen]=useState(false)
     const [modalData, setmodalData]=useState()
 
@@ -19,7 +18,6 @@ const Context = props => {
 
     var second = {tempDoc,formData,place}
     useEffect(()=>{
-      console.log("fired")
       const fetchItems= async ()=>{
         setPlace(tempDoc)
       }

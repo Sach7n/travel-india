@@ -1,4 +1,4 @@
-import React,{useContext,useRef,useCallback,useState,useEffect} from 'react';
+import React,{useContext,useRef,useCallback} from 'react';
 import {PlaceContext} from '../Context';
 import { places } from '../data';
 
@@ -8,29 +8,25 @@ const Filter = () => {
     const { handleChange,submitForm,clearFilter} = useContext(PlaceContext);
     const attractionInput = useRef()
     const typeInput = useRef()
-    const [filt,setFilt] = useState(null)
-    //console.log(places)
-
+  //  const [filt,setFilt] = useState(null)
+    
     const newPlace = [...new Map(places.map(np => [np.attraction, np])).values()]
     const newType = [...new Map(places.map(np => [np.type, np])).values()]
 
-    useEffect(()=>{
-        
-    },[])
-
-    const formHandler1 = useCallback(
-      () => (event) => {
-          event.preventDefault();
-          const data = {
-              attraction: attractionInput.current.value,
-              type: typeInput.current.value,
-          };
-          setFilt(data)
-          console.log(data)
+    
+  //   const formHandler1 = useCallback(
+  //     () => (event) => {
+  //         event.preventDefault();
+  //         const data = {
+  //             attraction: attractionInput.current.value,
+  //             type: typeInput.current.value,
+  //         };
+  //         setFilt(data)
+  //         console.log(data)
           
-      },
-      [filt]
-  );
+  //     },
+  //     [filt]
+  // );
 
     return (
         <>

@@ -1,16 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import PlaceName from './PlaceName'
-import { PlaceContext } from '../Context';
 import Filter from './Filter';
 import useFirestore from './hooks/useFirestore';
-import { useState } from 'react';
 
 
 const PlacesList = () => {
 
-    //const { place } = useContext(PlaceContext);
     const {tempDoc} = useFirestore('travApp')
-    console.log(tempDoc)
     return (
         <>
             <Filter />
