@@ -50,6 +50,10 @@ const Context = props => {
     const clearFilter =(event)=>{
       event.preventDefault();
       setPlace(tempDoc)
+      setformData({
+        attraction : "",
+        type : ""
+      })
       document.getElementById("course-form").reset();
     }
 
