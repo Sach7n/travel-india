@@ -7,7 +7,6 @@ export default function AddItem() {
 
     const [file, setFile] = useState(null)
 
-    console.log("### Refreshing");
     const nameInputElement = useRef();
     const attractionInputElement = useRef();
     const typeInputElement = useRef();
@@ -22,7 +21,6 @@ export default function AddItem() {
     const formHandler = useCallback(
         () => (event) => {
             event.preventDefault();
-            console.log(file)
             const data = {
                 title: nameInputElement.current.value,
                 attraction: attractionInputElement.current.value,
@@ -37,7 +35,6 @@ export default function AddItem() {
             };
             if( !(!data.title || /^\s*$/.test(data.title)) && data != null){
                 setFile(data)
-                console.log(data)
               }
             else {
                 alert("please fill form")

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { setDoc, doc, collection,ref, uploadBytesResumable,  getDownloadURL,db, storage } 
+import {serverTimestamp, setDoc, doc, collection,ref, uploadBytesResumable,  getDownloadURL,db, storage } 
 from "../firebase/config"
 
 const useStorage = (file1) => {
@@ -13,7 +13,8 @@ const useStorage = (file1) => {
     };
     const fireName = item.title + new Date().getTime();
     if (item != null) {
-      const fireName = item.title + new Date().getTime();
+      const fireName = new Date().getTime()+item.title ;
+      const createdAt = serverTimestamp();
       const placesRef = collection(db, "travApp");
       const storageRef = ref(storage, 'travApp/' + fireName);
       const uploadTask = uploadBytesResumable(storageRef, item.img, metadata);
@@ -23,10 +24,10 @@ const useStorage = (file1) => {
           setProgress(prog)
           switch (snapshot.state) {
             case 'paused':
-              console.log('Upload is paused');
+              //console.log('Upload is paused');
               break;
             case 'running':
-              console.log('Upload is running');
+              //console.log('Upload is running');
               break;
             default:
               break;
@@ -38,7 +39,7 @@ const useStorage = (file1) => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setDoc(doc(placesRef, fireName), { img: downloadURL }, { merge: true })
+            setDoc(doc(placesRef, fireName), { img: downloadURL,time:fireName }, { merge: true })
           });
           delete item.img;
           setDoc(doc(placesRef, fireName), item, { merge: true });

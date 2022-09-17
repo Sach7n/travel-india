@@ -1,4 +1,4 @@
-import { db,getDocs, collection} from "../firebase/config"
+import { db,getDocs, collection, query,orderBy} from "../firebase/config"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -8,7 +8,7 @@ const useFirestore = (collection1) => {
     useEffect(() => {
         async function fetchData() {
             try{
-                const querySnapshot = await getDocs(collection(db, collection1));
+                const querySnapshot = await getDocs(query(collection(db, collection1),orderBy("time","desc")));
                 querySnapshot.forEach((doc) => {
                     documents.push({ id: doc.id, ...doc.data() })
                 })
