@@ -5,7 +5,7 @@ import loadinggif from './loading.gif';
 
 const MorePhotos = props => {
     
-    let item =props.image.place;
+    let item =props.image.place1;
     
     const [image,setImage]=useState("")
     const [loading,setLoading]=useState(true)

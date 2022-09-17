@@ -2,7 +2,7 @@ import React from 'react';
 
 const MoreDetails = props => {
 
-    let item =props.mdetails.place;
+    let item =props.mdetails.place1;
     const tags = item.Destination.split(',');
     
     return (

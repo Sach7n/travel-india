@@ -2,7 +2,7 @@ import React from 'react';
 
 const Overview = props => {
 
-    let item =props.details.place;
+    let item =props.details.place1;
 
     return (
         <div>
