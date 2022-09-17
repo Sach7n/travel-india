@@ -1,17 +1,16 @@
 import React,{useContext,useRef,useCallback} from 'react';
 import {PlaceContext} from '../Context';
-import { places } from '../data';
 
 
-const Filter = () => {
-
+const Filter = (places1) => {
+    const item = places1.places
     const { handleChange,submitForm,clearFilter} = useContext(PlaceContext);
     const attractionInput = useRef()
     const typeInput = useRef()
   //  const [filt,setFilt] = useState(null)
     
-    const newPlace = [...new Map(places.map(np => [np.attraction, np])).values()]
-    const newType = [...new Map(places.map(np => [np.type, np])).values()]
+    const newPlace = [...new Map(item.map(np => [np.attraction, np])).values()]
+    const newType = [...new Map(item.map(np => [np.type, np])).values()]
 
     
   //   const formHandler1 = useCallback(
@@ -28,6 +27,9 @@ const Filter = () => {
   //     [filt]
   // );
 
+  const attractionTypes =["Beach","Architecture","Mountains", "Nature"]
+  const placeTypes =["Cruise","Adventure","Eco"]
+
     return (
         <>
         <p className=" lg:text-3xl lg:m-10 lg:ml-32 text-2xl ml-6 m-6 "> Select where you would like to go.. </p>
@@ -36,19 +38,19 @@ const Filter = () => {
         <div className="mx-10 text-gray-500 text-xs font-medium tracking-wide uppercase sm:mx-2">
         <p className="mb-2">   Attraction </p>
         {
-        newPlace.map((item,index)=>
+        attractionTypes.map((item,index)=>
         
                     <div className="mb-1" key={index}>
                     <input
                       type="radio"
                       name='attraction'
-                      value={item.attraction}
+                      value={item}
                       ref={attractionInput}
                       defaultChecked={false}
                       onChange={handleChange}
                     />
                     <label className=" items-center text-gray-700" >
-                    <span className="ml-2 capitalize">{item.attraction}</span>
+                    <span className="ml-2 capitalize">{item}</span>
                     </label>               
                     </div>            
         )}
@@ -56,19 +58,19 @@ const Filter = () => {
         <div className=" mb-2 mx-10 text-gray-500 text-xs font-medium tracking-wide uppercase">
         <p className="mb-2">Type</p>
         {
-        newType.map((item,index)=>
+        placeTypes.map((item,index)=>
         
                     <div className="mb-1" key={index}>
                     <label className=" items-center text-gray-700" >
                     <input
                       type="radio"
                       name='type'
-                      value={item.type}
+                      value={item}
                       ref={typeInput}
                       defaultChecked={false}
                       onChange={handleChange}
                     />
-                    <span className="ml-2 capitalize">{item.type}</span>      
+                    <span className="ml-2 capitalize">{item}</span>      
                     </label>
                     </div>            
 

@@ -16,13 +16,12 @@ const Context = props => {
       type : ""
     })    
 
-    var second = {tempDoc,formData,place}
     useEffect(()=>{
       const fetchItems= async ()=>{
         setPlace(tempDoc)
       }
       fetchItems()
-    },[second])
+    },[tempDoc])
 
     let featuredPlaces = places.filter(place1 => place1.featured === true);
     let randomRoom = featuredPlaces[~~(Math.random() * featuredPlaces.length)]
@@ -48,12 +47,9 @@ const Context = props => {
       setPlace(tempPlace)      
     }
     
-    const clearFilter =()=>{
-      console.log("called")
-      setformData({
-        attraction : "",
-        type : ""
-      })
+    const clearFilter =(event)=>{
+      event.preventDefault();
+      setPlace(tempDoc)
       document.getElementById("course-form").reset();
     }
 
